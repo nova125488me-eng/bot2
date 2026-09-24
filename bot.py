@@ -14,7 +14,6 @@
    load_dotenv()
    TOKEN = os.getenv("BOT_TOKEN")
 
-   # --------------------------------------------------------------------
    async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
        await update.message.reply_text(
            f"سلام {update.effective_user.first_name}!\n"
@@ -32,7 +31,6 @@
        text = " ".join(context.args)
        await update.message.reply_text(text if text else "هیچ متنی وارد نکردی!")
 
-   # --------------------------------------------------------------------
    async def main() -> None:
        app = ApplicationBuilder().token(TOKEN).build()
 
@@ -44,4 +42,3 @@
 
    if __name__ == "__main__":
        asyncio.run(main())
-   
